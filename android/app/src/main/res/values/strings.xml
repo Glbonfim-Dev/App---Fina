@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Fina</string>
+    <string name="title_activity_main">Fina</string>
+    <string name="package_name">com.fina.app</string>
+    <string name="custom_url_scheme">com.fina.app</string>
+</resources>
