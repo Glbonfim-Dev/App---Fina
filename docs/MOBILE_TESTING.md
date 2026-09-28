@@ -45,7 +45,7 @@ npm run test:e2e
 
 O Playwright executa Chromium em perfis Pixel 7 e iPhone 13. Em falhas, são gravados screenshot, vídeo e trace em `test-results/`; o relatório HTML fica em `playwright-report/`.
 
-Este smoke test cobre carregamento, ausência de overflow horizontal, console, título e manifesto. Fluxos autenticados devem seguir o roteiro manual porque dependem do Supabase de homologação e de confirmação por e-mail.
+Este smoke test cobre carregamento, ausência de overflow horizontal, console, título e manifesto. Com `.env`, ele valida a tela real de login sem criar ou modificar dados; sem `.env`, valida a tela de configuração. Fluxos autenticados devem seguir o roteiro manual porque dependem de uma conta de homologação e de confirmação por e-mail.
 
 ## 4. Android emulador
 

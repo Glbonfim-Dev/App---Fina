@@ -8,11 +8,12 @@ Execução de referência: 28/09/2026. Ambiente: Windows, Node.js 24.18.0. Os re
 | Tipos | `npm run typecheck` | Aprovado |
 | Lint | `npm run lint` | Aprovado — 0 erros/avisos |
 | Unitários | `npm test` | Aprovado — 2 arquivos, 8 testes |
-| Build web | `npm run build` | Aprovado — 79 módulos; JS principal 105,42 kB gzip |
-| Android Pixel 7 | `npm run test:e2e` | Aprovado — Chromium, 584 ms |
-| iPhone 13 simulado | `npm run test:e2e` | Aprovado — WebKit, 865 ms |
+| Build web | `npm run build` | Aprovado com Supabase configurado — 79 módulos; JS principal 122,96 kB gzip |
+| Android Pixel 7 | `npm run test:e2e` | Aprovado — Chromium e Supabase configurado, 809 ms |
+| iPhone 13 simulado | `npm run test:e2e` | Aprovado — WebKit e Supabase configurado, 882 ms |
 | Sincronização Capacitor | `npm run mobile:sync` | Aprovado — projeto Android e plugin `@capacitor/app` sincronizados |
 | APK Android | `gradlew assembleDebug` | Não executável neste ambiente sem JDK/Android SDK |
+| API Supabase | consulta REST anônima às 9 tabelas | Aprovado — HTTP 200 e zero linhas expostas |
 
 ## Escopo da evidência automatizada
 

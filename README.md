@@ -71,7 +71,7 @@ npm run test:e2e      # smoke test Android/iOS em viewport móvel
 npm audit             # dependências conhecidamente vulneráveis
 ```
 
-O teste E2E usa deliberadamente o estado sem credenciais para validar inicialização, responsividade e manifesto sem acessar dados reais. O roteiro completo com conta de homologação, aparelhos físicos e emuladores está em [docs/MOBILE_TESTING.md](docs/MOBILE_TESTING.md). Os resultados da revisão atual estão em [docs/TEST_RESULTS.md](docs/TEST_RESULTS.md).
+O smoke test E2E funciona com ou sem `.env`: quando configurado, valida a tela real de login conectada ao Supabase; sem configuração, valida a tela segura de setup. Ele não cria usuários nem grava dados. O roteiro completo com conta de homologação, aparelhos físicos e emuladores está em [docs/MOBILE_TESTING.md](docs/MOBILE_TESTING.md). Os resultados da revisão atual estão em [docs/TEST_RESULTS.md](docs/TEST_RESULTS.md).
 
 ## PWA: instalação no celular
 
