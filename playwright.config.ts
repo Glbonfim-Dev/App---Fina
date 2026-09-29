@@ -13,6 +13,7 @@ export default defineConfig({
     video: 'retain-on-failure',
   },
   projects: [
+    { name: 'Desktop - Chrome', use: { ...devices['Desktop Chrome'] } },
     { name: 'Android - Pixel 7', use: { ...devices['Pixel 7'] } },
     { name: 'iOS - iPhone 13', use: { ...devices['iPhone 13'] } },
   ],

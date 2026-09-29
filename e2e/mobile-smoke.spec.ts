@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('carrega a aplicação sem erro em viewport móvel', async ({ page, request }) => {
+test('carrega a aplicação sem erro no viewport configurado', async ({ page, request }) => {
   const consoleErrors: string[] = [];
   page.on('console', (message) => {
     if (message.type() === 'error') consoleErrors.push(message.text());
