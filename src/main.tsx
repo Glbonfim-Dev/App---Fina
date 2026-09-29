@@ -11,13 +11,6 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>
 );
 
-// Registra o service worker (permite instalar o app na tela inicial)
-if ('serviceWorker' in navigator && import.meta.env.PROD) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
-  });
-}
-
 if (Capacitor.isNativePlatform()) {
   void import('@capacitor/app').then(({ App: NativeApp }) =>
     NativeApp.addListener('appUrlOpen', ({ url }) => {

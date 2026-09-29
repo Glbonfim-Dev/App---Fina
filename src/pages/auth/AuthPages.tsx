@@ -165,8 +165,8 @@ export function Signup() {
         <label className={`check${errors.terms ? ' has-error' : ''}`}>
           <input type="checkbox" checked={terms} onChange={(e) => setTerms(e.target.checked)} />
           <span>
-            Li e aceito os <a href="/termos.html" target="_blank" rel="noreferrer">Termos de Uso</a> e a{' '}
-            <a href="/privacidade.html" target="_blank" rel="noreferrer">Política de Privacidade</a>.
+            Li e aceito os <a href="termos.html" target="_blank" rel="noreferrer">Termos de Uso</a> e a{' '}
+            <a href="privacidade.html" target="_blank" rel="noreferrer">Política de Privacidade</a>.
           </span>
         </label>
         {errors.terms && <p className="field-error">{errors.terms}</p>}

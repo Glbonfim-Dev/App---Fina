@@ -77,7 +77,7 @@ export function Profile() {
         <button className="menu-item" onClick={exportCSV}>
           <Icon name="download" /> <span className="grow">Exportar transações (CSV)</span>
         </button>
-        <a className="menu-item" href="/privacidade.html" target="_blank" rel="noreferrer">
+        <a className="menu-item" href="privacidade.html" target="_blank" rel="noreferrer">
           <Icon name="shield" /> <span className="grow">Privacidade e termos</span> <Icon name="right" size={18} />
         </a>
       </nav>

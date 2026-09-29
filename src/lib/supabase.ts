@@ -16,7 +16,7 @@ export const supabase = createClient(url || 'http://localhost', key || 'missing-
 });
 
 export function authRedirectUrl(): string {
-  return Capacitor.isNativePlatform() ? 'com.fina.app://auth/callback' : window.location.origin;
+  return Capacitor.isNativePlatform() ? 'com.fina.app://auth/callback' : window.location.origin + window.location.pathname;
 }
 
 /** Finaliza callbacks OAuth/PKCE recebidos pelo esquema nativo do Capacitor. */

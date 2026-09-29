@@ -14,7 +14,6 @@ test('carrega a aplicação sem erro em viewport móvel', async ({ page, request
   expect(overflow).toBe(false);
   expect(consoleErrors).toEqual([]);
 
-  const manifest = await request.get('/manifest.webmanifest');
-  expect(manifest.ok()).toBe(true);
-  await expect(manifest.json()).resolves.toMatchObject({ name: 'Fina — Controle financeiro', display: 'standalone' });
+  const favicon = await request.get('/icons/icon-192.png');
+  expect(favicon.ok()).toBe(true);
 });

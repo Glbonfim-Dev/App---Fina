@@ -122,7 +122,7 @@ function SetupNeeded() {
         <h1>Falta configurar o Supabase</h1>
         <p className="muted">
           Crie o arquivo <code>.env</code> (copie de <code>.env.example</code>) com <code>VITE_SUPABASE_URL</code> e{' '}
-          <code>VITE_SUPABASE_ANON_KEY</code>. Na Vercel, cadastre essas duas variáveis em Settings &gt; Environment Variables. Veja o
+          <code>VITE_SUPABASE_ANON_KEY</code>. No GitHub, cadastre essas duas variáveis em Settings &gt; Secrets and variables &gt; Actions. Veja o
           README.
         </p>
       </div>

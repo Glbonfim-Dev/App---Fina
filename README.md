@@ -1,6 +1,6 @@
 # Fina — controle financeiro pessoal
 
-Aplicação mobile-first para organizar rendas, despesas, contas, cartões, parcelas, orçamentos e metas. Pode ser usada como PWA no navegador ou empacotada como aplicativo Android com Capacitor.
+Página web para organizar rendas, despesas, contas, cartões, parcelas, orçamentos e metas.
 
 ## Tecnologias
 
@@ -8,7 +8,7 @@ Aplicação mobile-first para organizar rendas, despesas, contas, cartões, parc
 - Supabase Auth e PostgreSQL com Row Level Security (RLS);
 - Vitest, Testing Library e Playwright;
 - Capacitor 8 para Android;
-- Vercel para hospedagem da PWA.
+- GitHub Pages para hospedagem da página estática.
 
 ## Pré-requisitos
 
@@ -16,7 +16,7 @@ Aplicação mobile-first para organizar rendas, despesas, contas, cartões, parc
 - conta e projeto no Supabase;
 - Git;
 - para Android nativo: Android Studio, Android SDK 36, JDK 21 e um emulador ou aparelho com Android 7+;
-- para iOS nativo: macOS, Xcode e conta Apple Developer. Em Windows/Linux, teste a PWA com o perfil de iPhone do Playwright.
+- para iOS nativo: macOS, Xcode e conta Apple Developer. Em Windows/Linux, teste a página web com o perfil de iPhone do Playwright.
 
 ## Configuração local
 
@@ -45,7 +45,7 @@ Para uma instalação criada com uma versão anterior do Fina, execute primeiro 
 Em **Authentication → URL Configuration**, configure:
 
 - Site URL de desenvolvimento: `http://localhost:5173`;
-- URL de produção: domínio da Vercel;
+- URL de produção: endereço do GitHub Pages com a barra final;
 - Redirect URLs: os dois endereços acima e `com.fina.app://auth/callback` para Android.
 
 Ative confirmação de e-mail e configure SMTP próprio antes de liberar o cadastro ao público.
@@ -73,13 +73,6 @@ npm audit             # dependências conhecidamente vulneráveis
 
 O smoke test E2E funciona com ou sem `.env`: quando configurado, valida a tela real de login conectada ao Supabase; sem configuração, valida a tela segura de setup. Ele não cria usuários nem grava dados. O roteiro completo com conta de homologação, aparelhos físicos e emuladores está em [docs/MOBILE_TESTING.md](docs/MOBILE_TESTING.md). Os resultados da revisão atual estão em [docs/TEST_RESULTS.md](docs/TEST_RESULTS.md).
 
-## PWA: instalação no celular
-
-1. Publique o site com HTTPS.
-2. Android/Chrome: abra o site → menu ⋮ → **Instalar app**.
-3. iPhone/Safari: abra o site → Compartilhar → **Adicionar à Tela de Início**.
-4. Abra pelo ícone e valide login, persistência da sessão e funcionamento após atualização.
-
 ## Android nativo
 
 O projeto `android/` já está versionado.
@@ -103,13 +96,13 @@ cd android
 
 Uma release destinada à Play Store deve ser assinada com keystore mantido fora do Git. Veja o procedimento completo em [docs/MOBILE_TESTING.md](docs/MOBILE_TESTING.md).
 
-## Deploy na Vercel
+## Publicar no GitHub Pages
 
-1. Importe este repositório na Vercel.
-2. Cadastre `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY` em Development, Preview e Production.
-3. Use `npm run build` e diretório de saída `dist`.
-4. Depois do deploy, atualize Site URL e Redirect URLs no Supabase.
-5. Confira os cabeçalhos de segurança definidos em [vercel.json](vercel.json).
+1. Crie um repositório no GitHub e envie esta pasta (sem o `.env`).
+2. Em **Settings > Secrets and variables > Actions**, crie os secrets `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY`.
+3. Em **Settings > Pages**, em **Source**, escolha **GitHub Actions**.
+4. Faça um push na branch `main` e aguarde a aba **Actions** terminar; o endereço aparece em **Settings > Pages**.
+5. No Supabase, em **Authentication > URL Configuration**, coloque o endereço do GitHub Pages (com a barra final, por exemplo: `https://usuario.github.io/fina/`) em **Site URL** e em **Redirect URLs**.
 
 ## Segurança e operação
 
@@ -128,7 +121,7 @@ Uma release destinada à Play Store deve ser assinada com keystore mantido fora 
 android/                 projeto Android Capacitor
 docs/                    testes mobile e evidências
 e2e/                     smoke tests Playwright
-public/                  PWA, ícones e documentos legais
+public/                  favicon e documentos legais
 src/components/          componentes reutilizáveis
 src/lib/                 Supabase, regras e testes unitários
 src/pages/               autenticação, onboarding e telas principais
